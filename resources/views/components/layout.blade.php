@@ -23,7 +23,7 @@
             <div>
                 <a href="/">
                     <img
-                        src="./images/logo.svg"
+                        src="/images/logo.svg"
                         alt="Laracasts Logo"
                         width="165"
                         height="16"
@@ -49,7 +49,7 @@
             class="mt-16 rounded-xl border border-black border-opacity-5 bg-gray-100 px-10 py-16 text-center"
         >
             <img
-                src="./images/lary-newsletter-icon.svg"
+                src="/images/lary-newsletter-icon.svg"
                 alt=""
                 class="mx-auto -mb-6"
                 style="width: 145px"
@@ -67,7 +67,7 @@
                         <div class="flex items-center lg:px-5 lg:py-3">
                             <label for="email" class="hidden lg:inline-block">
                                 <img
-                                    src="./images/mailbox-icon.svg"
+                                    src="/images/mailbox-icon.svg"
                                     alt="mailbox letter"
                                 />
                             </label>
