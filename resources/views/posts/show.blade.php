@@ -46,30 +46,8 @@
                     <div class="space-y-4 lg:text-lg leading-loose">{!! $post->body !!}</div>
                 </div>
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
-
-                    <x-panel>
-                        <form action="#" method="POST">
-                            @csrf
-                            <header class="flex items-center">
-                                <img src="https://i.pravatar.cc/40?id={{auth()->id()}}" alt="" width="40" height="40px"
-                                     class="rounded-full">
-                                <h2 class="ml-4">Wanna participate</h2>
-                            </header>
-                            <div class="mt-5">
-                                <textarea name="body" id="" cols="30" rows="10"
-                                          class="w-full text-sm focus:outline-none focus:ring border-2 border-blue-500 p-2 rounded"
-                                          placeholder="Write something..."></textarea>
-                            </div>
-                            <div class="flex justify-end">
-                                <button
-                                    class="rounded-full bg-blue-500 mt-4 font-semibold px-10 py-2 hover:bg-blue-700 transition text-white text-sm"
-                                    type="submit">Post
-                                </button>
-                            </div>
-                        </form>
-                    </x-panel>
-
-                    @foreach($post->comments as $comment)
+                    @include('posts._add-comment-form')
+                    @foreach($post->comments->reverse() as $comment)
                         <x-post-comment :comment="$comment" />
                     @endforeach
 
