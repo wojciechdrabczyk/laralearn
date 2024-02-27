@@ -34,4 +34,5 @@ class SessionsController extends Controller
 
         return redirect('/')->with('success', 'Goodbye!');
     }
+
 }
