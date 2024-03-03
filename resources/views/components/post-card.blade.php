@@ -1,4 +1,4 @@
-@props(['post'])
+
 <article
     {{ $attributes->merge(['class' => 'rounded-xl border border-black border-opacity-0 transition-colors duration-300 hover:border-opacity-5 hover:bg-gray-100']) }}
 >
@@ -14,14 +14,12 @@
         <div class="mt-8 flex flex-col justify-between">
             <header>
                 <div class="space-x-2">
-                    <x-form.button :category="$post->category" />
                     <a
-                        href="#"
-                        class="rounded-full border border-red-300 px-3 py-1 text-xs font-semibold uppercase text-red-300"
+                        href="/?category={{ $post->category->slug }}"
+                        class="rounded-full border border-blue-300 px-3 py-1 text-xs font-semibold uppercase text-blue-300"
                         style="font-size: 10px"
-                        {{ $post->category->name }}
                     >
-                        Updates
+                        {{ $post->category->name }}
                     </a>
                 </div>
 
