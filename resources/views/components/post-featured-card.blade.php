@@ -1,27 +1,21 @@
 @props(['post'])
 <article
-        class="rounded-xl border border-black border-opacity-0 transition-colors duration-300 hover:border-opacity-5 hover:bg-gray-100"
+    class="rounded-xl border border-black border-opacity-0 transition-colors duration-300 hover:border-opacity-5 hover:bg-gray-100"
 >
     <div class="px-5 py-6 lg:flex">
         <div class="flex-1 lg:mr-8">
             {{-- TODO --}}
             <img
-                    src="{{ asset('storage/' . $post->thumbnail) }}"
-                    alt="Blog Post illustration"
-                    class="rounded-xl"
+                src="{{ asset('storage/' . $post->thumbnail) }}"
+                alt="Blog Post illustration"
+                class="rounded-xl"
             />
         </div>
 
         <div class="flex flex-1 flex-col justify-between">
             <header class="mt-8 lg:mt-0">
                 <div class="space-x-2">
-                    <a
-                            href="/categories/{{ $post->category->slug }}"
-                            class="rounded-full border border-blue-300 px-3 py-1 text-xs font-semibold uppercase text-blue-300"
-                            style="font-size: 10px"
-                    >
-                        {{ $post->category->name }}
-                    </a>
+                    <x-category-button :category="$post->category" />
                 </div>
 
                 <div class="mt-4">
@@ -50,8 +44,8 @@
 
                 <div class="hidden lg:block">
                     <a
-                            href="/posts/{{ $post->slug }}"
-                            class="rounded-full bg-gray-200 px-8 py-2 text-xs font-semibold transition-colors duration-300 hover:bg-gray-300"
+                        href="/posts/{{ $post->slug }}"
+                        class="rounded-full bg-gray-200 px-8 py-2 text-xs font-semibold transition-colors duration-300 hover:bg-gray-300"
                     >
                         Read More
                     </a>
